@@ -3,16 +3,16 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-function AllBeers(props) {
+function AllBeers() {
   const [foundBeer, setFoundBeer] = useState([]);
-//   const [result, setResult] = useState('');
+
     const [query, setQuery] = useState("");
     
 
     //First useEffect to load the data
     useEffect(() => {
         axios.get("https://ih-beers-api2.herokuapp.com/beers").then((response) => {
-          // console.log("This is the data ==>",response.data)
+          
           setFoundBeer(response.data);
         });
       }, []);
@@ -42,15 +42,11 @@ function AllBeers(props) {
           onChange={(e) => setQuery(e.target.value)}
         />
           </form>
-          {/* {query && (result.map((bier) => (
-              <div key={bier._id}>
-              <p><b>Name of the beer:</b>{bier.name}</p>
-                  <img src={bier.image_url} alt="BIER" />
-              </div>
-          )))} */}
+      
 
-      <h1>AllBeers</h1>
-      { (foundBeer.map((beer) => (
+          <h1>AllBeers</h1>
+          {!foundBeer && <h1>LOAAAADINGG</h1>}
+      {foundBeer && (foundBeer.map((beer) => (
         <div key={beer._id}>
           <img src={beer.image_url} alt="beerimage"></img>
           <Link to={`/BeerInfo/${beer._id}`}>
