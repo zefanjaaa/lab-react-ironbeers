@@ -9,7 +9,7 @@ import BeerInfo from "./pages/BeerInfo";
 
 function App() {
   return (
-    <div className="App">
+    <div className='bg-white '>
       <NavBar />
       <Routes>
         <Route path="/" element={<Homepage />} />

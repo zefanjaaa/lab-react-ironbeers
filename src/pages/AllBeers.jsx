@@ -33,22 +33,23 @@ function AllBeers() {
 
 
   return (
-    <div>
-      <h2>Search for a beer</h2>
+    <div className="col justify-content-center">
+      <h2 className="text-center">Search for a beer</h2>
       <form onChange={handleSubmit}>
         <input
           type="text"
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+                  onChange={(e) => setQuery(e.target.value)}
+                  
         />
           </form>
       
 
-          <h1>AllBeers</h1>
+          <h1 className="text-center">AllBeers</h1>
           {!foundBeer && <h1>LOAAAADINGG</h1>}
       {foundBeer && (foundBeer.map((beer) => (
-        <div key={beer._id}>
-          <img src={beer.image_url} alt="beerimage"></img>
+        <div className="text-center" key={beer._id}>
+          <img src={beer.image_url} alt="beerimage" style={{height:'200px'}} className="mx-auto img-fluid max-heigth:200px" />
           <Link to={`/BeerInfo/${beer._id}`}>
             <p>
               <b>{beer.name}</b>
