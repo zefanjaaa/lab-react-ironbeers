@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 function Homepage() {
   return (
     <div>
+      
       <div>
         <img src={AllBeers} alt="allbeer" />
         <Link to={"/beers"}>

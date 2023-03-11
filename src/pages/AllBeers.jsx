@@ -46,8 +46,8 @@ function AllBeers() {
       
 
           <h1 className="text-center">AllBeers</h1>
-          {!foundBeer && <h1>LOAAAADINGG</h1>}
-      {foundBeer && (foundBeer.map((beer) => (
+          {foundBeer.length === 0 && <h1>LOAAAADINGG</h1>}
+      {foundBeer.length > 0  && (foundBeer.map((beer) => (
         <div className="text-center" key={beer._id}>
           <img src={beer.image_url} alt="beerimage" style={{height:'200px'}} className="mx-auto img-fluid max-heigth:200px" />
           <Link to={`/BeerInfo/${beer._id}`}>
